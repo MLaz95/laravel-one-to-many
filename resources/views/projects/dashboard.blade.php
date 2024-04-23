@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{ route('projects.create') }}" class="btn btn-primary my-2 float-end">Add a Project</a>
+    <div class="d-flex justify-content-end gap-2">
+        <a href="{{ route('projects.create') }}" class="btn btn-primary my-2">Add a Project</a>
+        <a href="{{ route('types.index') }}" class="btn btn-secondary my-2">Options</a>
+    </div>
     <table class="table table-striped table-hover">
         <thead>
             <tr class="text-capitalize">

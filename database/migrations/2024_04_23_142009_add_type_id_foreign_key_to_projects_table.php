@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             // adds type_id column to projects
-            $table->foreignId('type_id')->nullable()->constrained();
+            $table->foreignId('type_id')
+            ->nullable()
+            ->constrained()
+            ->nullOnDelete();
         });
     }
 
@@ -23,11 +26,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
+
             // removes link between type_id and the types table
             $table->dropForeign('projects_type_id_foreign');
 
             // drops the actual column
-            $table->dropColumn('category_id');
+            $table->dropColumn('type_id');
         });
     }
 };
