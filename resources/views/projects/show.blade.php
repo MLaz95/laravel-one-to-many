@@ -6,6 +6,7 @@
     <img src="{{asset('storage/' . $project->cover)}}" alt="">
     <div>
         <h2>{{$project->name}}</h2>
+        <small>{{$project->type?->title}}</small>
         <p>{{$project->description}}</p>
         <div>{{$project->tech}}</div>
         <div>{{$project->github}}</div>

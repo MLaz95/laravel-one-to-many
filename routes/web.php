@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('projects', ProjectController::class);
+    Route::resource('types', TypeController::class);
 });
 
 require __DIR__.'/auth.php';
