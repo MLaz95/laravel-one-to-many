@@ -25,6 +25,7 @@ class StoreProjectRequest extends FormRequest
             'name' =>  'required|max:200',
             'description' => 'required',
             'cover' => 'file|nullable|mimes:jpg,bmp,png',
+            'type_id' => 'nullable|exists:types,id',
             'tech' =>  'required|max:200',
             'github' => 'required',
         ];

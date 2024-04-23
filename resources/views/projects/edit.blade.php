@@ -43,6 +43,18 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="type_id" class="form-label text-capitalize">type</label>
+            <select class="form-control" name="type_id">
+                {{-- empty option to allow for null value --}}
+                <option value=""></option>
+                {{-- adds an option for each type present in the types table --}}
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" {{ $type->id == old('type_id', $project->type ? $project->type->id : '') ? 'selected' : '' }}>{{ $type->title }}</option>
+                @endforeach
+
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="github" class="form-label text-capitalize">github</label>
             <input type="text" class="form-control @error('github') is-invalid @enderror" name="github" value="{{$project->github}}">
             @error('github')

@@ -7,7 +7,7 @@
             <tr class="text-capitalize">
                 <th scope="col">name</th>
                 <th scope="col">description</th>
-                <th scope="col">cover</th>
+                <th scope="col">type</th>
                 <th scope="col">tech</th>
                 <th scope="col">github</th>
                 <th scope="col">buttons</th>
@@ -18,7 +18,7 @@
                 <tr>
                     <th scope="row" class="text-capitalize">{{ $project->name }}</th>
                     <td>{{ $project->description }}</td>
-                    <td>{{ $project->cover }}</td>
+                    <td>{{ $project->type?->title }}</td>
                     <td>{{ $project->tech }}</td>
                     <td>{{ $project->github }}</td>
                     <td >
